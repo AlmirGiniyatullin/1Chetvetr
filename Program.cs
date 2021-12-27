@@ -1,4 +1,6 @@
-﻿int[] array1 = { 1, 2, 3, 4 };
+﻿using System.Linq;
+
+int[] array1 = { 1, 2, 3, 4 };
 int[] array2 = { 1, 3, 14, 5, 7, 1, 23};
 int[] array3 = { 2, -4, 16};
 int[] array4 = { 11, 9, 8, 15};
@@ -57,22 +59,6 @@ int[] Selection2 (int[] arr, int find)  //предварительный под�
     return arrayNew;
 }
 
-string Selection3 (int[] arr, int find)  //составление строки из элементов массива больше find
-{
-    string result = String.Empty;
-        
-    for (int i = 0; i < arr.Length; i++)
-    {
-        if (arr[i] > find)
-        {
-            result = result + arr[i] + " ";
-        }
-    }
-    return result;
-}
-
-
-
 
 
 //Array.ForEach(array, Console.WriteLine);
@@ -93,10 +79,4 @@ Console.WriteLine("Новый массив с предварительным п�
 
 PrintArray(arrayRez);
 
-string str = Selection3(array2, 8);
 
-Console.WriteLine("yjd " + str);
-
-
-
-// arrayRez = (int) str;   var intsArr = strWithInts.Split().Select(int32.Parse).ToArray();
