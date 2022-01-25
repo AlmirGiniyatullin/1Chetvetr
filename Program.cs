@@ -1,4 +1,43 @@
-﻿void PrintArray(string[] arrString)
+string[] Main()
+{
+  int count = 0; // текущее количество строк в массиве
+  string[] AS = new string[count]; // выделить память для 0 строк
+  string s;
+  string[] AS2; // дополнительная переменная-ссылка - сохраняет старый массив строк
+
+  Console.WriteLine("Enter strings:");
+
+  do
+  {
+    s = Console.ReadLine();
+    if (s!="")
+    {
+      count++;
+      AS2 = new string[count];
+      for (int i = 0; i < AS.Length; i++) // Если использовать AS.Length не работает
+        {
+          AS2[i] = AS[i];
+        }
+        
+        // добавить последнюю введенную строку в массив AS2
+        AS2[count - 1] = s;
+        
+        // перенаправить ссылку AS на AS2
+        AS = AS2;
+        }
+      }while (s != "");
+return AS;
+} 
+//while (s != "");
+
+      
+
+
+
+
+
+
+void PrintArray(string[] arrString)
 {
     int count = arrString.Length;
 
@@ -10,7 +49,6 @@
         Console.WriteLine("array[{0}] = {1}", i, arrString[i]);
         }   
     }
-
 }
 
 
@@ -46,11 +84,12 @@ string[] Selection (string[] arr, int strLength)  //предварительны
 
 //["Russia", "Denmark", "Kazan"] -> []
 
+string[] arrayStr = Main();
 string[] a1 = {"hello", "2", "world", ":-)"};
 string[] a2 = {"1234", "1567", "-2", "computer science"};
 string[] a3 = {"Russia", "Denmark", "Kazan"};
 
-string[] arrayStr = a3;
+//string[] arrayStr = a3;
 
 PrintArray(arrayStr);
 
