@@ -93,5 +93,3 @@ string[] arrayRez = Selection(arrayStr, stringLeng);
 Console.WriteLine("Новый массив с предварительным подсчетом элементов результирующего массива");
 
 PrintArray(arrayRez);
-
-
