@@ -24,17 +24,10 @@ string[] Main()
         
         // перенаправить ссылку AS на AS2
         AS = AS2;
-        }
-      }while (s != "");
+    }
+  }while (s != "");
 return AS;
 } 
-//while (s != "");
-
-      
-
-
-
-
 
 
 void PrintArray(string[] arrString)
@@ -79,21 +72,23 @@ string[] Selection (string[] arr, int strLength)  //предварительны
 }
 
 //["hello", "2", "world", ":-)"] -> ["2", ":-)"]
-
 //["1234", "1567", "-2", "computer science"] -> ["-2"]
-
 //["Russia", "Denmark", "Kazan"] -> []
+// для тестирования
+// string[] a1 = {"hello", "2", "world", ":-)"};
+// string[] a2 = {"1234", "1567", "-2", "computer science"};
+// string[] a3 = {"Russia", "Denmark", "Kazan"};
+//string[] arrayStr = a3;
 
 string[] arrayStr = Main();
-string[] a1 = {"hello", "2", "world", ":-)"};
-string[] a2 = {"1234", "1567", "-2", "computer science"};
-string[] a3 = {"Russia", "Denmark", "Kazan"};
-
-//string[] arrayStr = a3;
 
 PrintArray(arrayStr);
 
-string[] arrayRez = Selection(arrayStr, 3);
+Console.Write("Введите максимальную длину строк в массиве: ");
+
+int stringLeng = int.Parse(Console.ReadLine());
+
+string[] arrayRez = Selection(arrayStr, stringLeng);
 
 Console.WriteLine("Новый массив с предварительным подсчетом элементов результирующего массива");
 
