@@ -45,55 +45,31 @@ void PrintArray(string[] arrString)
 }
 
 
-// string[] Selection(string[] arr, int strLength)  //предварительный подсчет элементов результирующего массива
-// {
-//     int m = 0; //длина результирующего массива
-//     string text = String.Empty;
-//     for (int i = 0; i < arr.Length; i++)
-//     {
-//         text = arr[i];
-//         if (text.Length <= strLength) m++;
-//     }
+string[] Selection1(string[] arr, int strLength)  //предварительный подсчет элементов результирующего массива
+{
+    int m = 0; //длина результирующего массива
+    string text = String.Empty;
+    for (int i = 0; i < arr.Length; i++)
+    {
+        text = arr[i];
+        if (text.Length <= strLength) m++;
+    }
 
-//     string[] arrayNew = new string[m];
+    string[] arrayNew = new string[m];
 
-//     m = 0;
+    m = 0;
 
-//     for (int i = 0; i < arr.Length; i++)
-//     {
-//         text = arr[i];
-//         if (text.Length <= strLength)
-//         {
-//             arrayNew[m] = arr[i];
-//             m++;
-//         }
-//     }
-//     return arrayNew;
-// }
-
-//["hello", "2", "world", ":-)"] -> ["2", ":-)"]
-//["1234", "1567", "-2", "computer science"] -> ["-2"]
-//["Russia", "Denmark", "Kazan"] -> []
-// для тестирования
-// string[] a1 = {"hello", "2", "world", ":-)"};
-// string[] a2 = {"1234", "1567", "-2", "computer science"};
-// string[] a3 = {"Russia", "Denmark", "Kazan"};
-//string[] arrayStr = a3;
-
-string[] arrayStr = Main();
-
-PrintArray(arrayStr);
-
-Console.Write("Введите максимальную длину строк в массиве: ");
-
-int stringLeng = int.Parse(Console.ReadLine());
-
-//string[] arrayRez = Selection(arrayStr, stringLeng);
-
-//Console.WriteLine("Новый массив с предварительным подсчетом элементов результирующего массива");
-
-//PrintArray(arrayRez);
-
+    for (int i = 0; i < arr.Length; i++)
+    {
+        text = arr[i];
+        if (text.Length <= strLength)
+        {
+            arrayNew[m] = arr[i];
+            m++;
+        }
+    }
+    return arrayNew;
+}
 
 string[] Selection2(string[] arr, int strLength)
 {
@@ -122,8 +98,32 @@ string[] Selection2(string[] arr, int strLength)
   return AS;
 }
 
-string[] arrayRez = Selection2(arrayStr, stringLeng);
+
+//["hello", "2", "world", ":-)"] -> ["2", ":-)"]
+//["1234", "1567", "-2", "computer science"] -> ["-2"]
+//["Russia", "Denmark", "Kazan"] -> []
+// для тестирования
+// string[] a1 = {"hello", "2", "world", ":-)"};
+// string[] a2 = {"1234", "1567", "-2", "computer science"};
+// string[] a3 = {"Russia", "Denmark", "Kazan"};
+//string[] arrayStr = a3;
+
+string[] arrayStr = Main();
+
+PrintArray(arrayStr);
+
+Console.Write("Введите максимальную длину строк в массиве: ");
+
+int stringLeng = int.Parse(Console.ReadLine());
+
+string[] arrayRez = Selection1(arrayStr, stringLeng);
 
 Console.WriteLine("Новый массив с предварительным подсчетом элементов результирующего массива");
 
 PrintArray(arrayRez);
+
+string[] arrayRez2 = Selection2(arrayStr, stringLeng);
+
+Console.WriteLine("Новый массив сформированный при проверке соответствия условию");
+
+PrintArray(arrayRez2);
